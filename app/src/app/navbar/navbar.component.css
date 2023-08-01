@@ -2,17 +2,23 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    
+    align-items: center;
+
     height: 6vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    
+
     border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
 
 .title {
+    display: flex;
     font-size: 30px;
-    color:  var(--primary);
+    color: var(--primary);
+}
+
+.title .horroroso {
+    color: #c23a00;
 }
 
 .container {
@@ -21,6 +27,7 @@ header {
 
 .search {
     width: 30vw;
+    height: 5vh;
     padding-left: 25px;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -29,6 +36,7 @@ header {
 }
 
 .buttonSearch {
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,18 +46,18 @@ header {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    }
+}
 
-.buttonSearch h1{
+.buttonSearch h1 {
     font-size: 15px;
     color: white;
 }
 
-.buttonSearch :hover{
+.buttonSearch :hover {
     background-color: #ff7b42;
 }
 
-.user button{
+.user button {
     border: none;
     border-radius: 100%;
     width: 5vh;
@@ -57,15 +65,14 @@ header {
     background-color: #e9e9e9;
 }
 
-.user i{
+.user i {
     font-size: 20px;
 }
 
-.user :hover{
+.user :hover {
     transition: 0.5s;
     background-color: #f8f8f8;
     box-shadow: 2px 1px 17px 1px rgba(0, 0, 0, 1);
     -webkit-box-shadow: 2px 1px 17px 1px rgba(0, 0, 0, 1);
     -moz-box-shadow: 2px 1px 17px 1px rgba(0, 0, 0, 1);
 }
-
