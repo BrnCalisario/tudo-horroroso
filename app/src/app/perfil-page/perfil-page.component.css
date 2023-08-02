@@ -31,5 +31,7 @@ h4, h3, h5 {
 }
 
 .profile-pic {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
 }
