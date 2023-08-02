@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { RegisterComponent } from './register/register.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RecipeItemComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
