@@ -1,0 +1,43 @@
+.recipe
+{
+    display: flex;
+    align-items: center;
+    outline: 1px solid lightgray;
+    
+    gap: 1rem;
+
+    padding: 1rem 0.5rem;
+
+    transition: 0.3s;
+}
+
+.recipe:hover
+{
+    outline: 1px solid var(--primary);
+
+}
+
+.recipe p, h4
+{
+    padding: 0;
+    margin: 0;
+}
+
+.rate 
+{
+    display: flex;
+    align-items: center;
+}
+
+.rate i
+{
+    color: var(--primary);
+    font-size: 1.2rem;
+
+}
+
+.rate p
+{
+    font-size: 1rem;
+    color: var(--accent);
+}

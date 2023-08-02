@@ -47,21 +47,24 @@
 }
 
 .buttonSearch {
-    height: 5vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
-    background-color: var(--primary);
+    
     width: 10vw;
+    height: 5vh;
+    background-color: var(--primary);
+
+    border: none;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .buttonSearch h1 {
     font-size: 15px;
+    margin: 0;
     color: white;
 }
 
