@@ -1,10 +1,13 @@
-header {
-    width: 100%;
+.navigation {
+    
+
+    width: 100vw;
+    
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    height: 6vh;
+    height: 9vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
 
@@ -13,7 +16,6 @@ header {
 
 .title {
     display: flex;
-    font-size: 30px;
     color: var(--primary);
 }
 
@@ -21,7 +23,16 @@ header {
     color: #c23a00;
 }
 
-.container {
+.title h5
+{
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.wrap {
     display: flex;
 }
 
@@ -37,6 +48,7 @@ header {
 
 .buttonSearch {
     height: 5vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,12 +79,7 @@ header {
 
 .user i {
     font-size: 20px;
-}
-
-.user :hover {
-    transition: 0.5s;
-    background-color: #f8f8f8;
-    box-shadow: 2px 1px 17px 1px rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 2px 1px 17px 1px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 2px 1px 17px 1px rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    padding: 10px;
 }

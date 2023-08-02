@@ -11,14 +11,14 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: '**',
-    title: "Error",
-    component: NotFoundComponent
-  },
-  {
     path: 'register',
     title: "Cadastro",
     component: RegisterComponent
+  },
+  {
+    path: '**',
+    title: "Error",
+    component: NotFoundComponent
   }
 ];
 
