@@ -76,3 +76,15 @@ a {
 a.forgot {
     margin-top: 15px;
 }
+
+.create {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.create i {
+    color: #9a9a9a;
+    margin-left: 10px;
+}
