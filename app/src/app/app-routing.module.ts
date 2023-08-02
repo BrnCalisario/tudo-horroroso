@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
     path: 'recipe',
     title: "Recipe",
     component: RecipeListComponent
+  },
+  {
+    path: 'create',
+    title: "Criar Receita",
+    component: CreateRecipeComponent
   },
   {
     path: '**',

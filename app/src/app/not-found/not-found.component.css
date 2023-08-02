@@ -26,7 +26,10 @@ p {
     margin-bottom: 0;
 }
 
-p span 
+p a 
 {
+    font-weight: 800;
+    cursor: pointer;
     color: var(--primary);
+    
 }

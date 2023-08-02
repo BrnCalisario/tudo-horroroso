@@ -1,0 +1,35 @@
+.create
+{
+    margin: 0 auto;
+    width: 60%;
+}
+
+.create input, textarea
+{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.input-style
+{
+    padding: 0.75rem 1.25rem;
+    outline: 1px solid lightgray;
+    border-radius: 25px;
+    border: 0;
+
+    transition: .05s;
+
+    margin: .25rem 0 0.75rem 0;
+}
+
+input[type="text"]:focus
+{
+    outline: 2.5px solid var(--primary);
+    transition: 0.2s;
+}
+
+textarea:focus
+{
+    outline: 2.5px solid var(--primary);
+    transition: 0.2s;   
+}
