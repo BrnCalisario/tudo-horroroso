@@ -4,8 +4,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { PerfilPageComponent } from './perfil-page/perfil-page.component';
 
 const routes: Routes = [
   {
@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'recipe',
     title: "Recipe",
     component: RecipeListComponent
+  },
+  {
+    path: 'perfil',
+    title: "Perfil",
+    component: PerfilPageComponent
   },
   {
     path: '**',

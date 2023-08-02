@@ -1,0 +1,35 @@
+.main {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-section {
+    border-radius: 15px;
+    background-color: var(--secondary);
+    margin-left: 0 auto;
+    padding: 15px;
+    width: 20%;
+}
+
+.infos {
+    padding: 40px;
+    border-radius: 15px;
+    width: 68%;
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    box-shadow: 0.5px 0.5px 20px gray;
+}
+
+h4, h3, h5 {
+    padding: 2px;
+}
+
+.data-user {
+    padding: 10px;
+}
+
+.profile-pic {
+    margin: 0 auto;
+}
