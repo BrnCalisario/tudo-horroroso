@@ -16,7 +16,7 @@ const routes: Routes = [
     component: NotFoundComponent
   },
   {
-    path: '/register',
+    path: 'register',
     title: "Cadastro",
     component: RegisterComponent
   }
