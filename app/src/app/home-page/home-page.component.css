@@ -51,7 +51,8 @@ h2 {
 }
 
 #logo-img {
-    padding: 100px;
+    /* padding: 100px; */
+    margin: 0 auto;
     width: 600px;
 }
 
@@ -67,4 +68,21 @@ h2 {
     font-size: xx-large;
     color: black;
     padding-top: 20px;
+}
+
+
+@media (max-width: 1550px) {
+    #logo-img {
+        /* padding: 100px; */
+        width: 400px;
+    }
+
+    h2 
+    {
+        font-size: 3.8rem;
+    }
+
+    #explore-text {
+        font-size: 1.3rem;
+    }
 }
