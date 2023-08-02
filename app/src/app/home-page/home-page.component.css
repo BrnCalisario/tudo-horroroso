@@ -45,7 +45,7 @@ h2 {
 }
 
 .button-section {
-    padding-top: 140px;
+    padding-left: 20px;
     gap: 30px;
     display: flex;
 }
@@ -59,9 +59,12 @@ h2 {
     width: 100px;
     height: 50px;
     border-radius: 15px;
-    background-color: var(--primary);
+    background-color: white;
 }
 
 #explore-text {
-    padding: 20px;
+    font-family: "REM", sans-serif;
+    font-size: xx-large;
+    color: black;
+    padding-top: 20px;
 }
