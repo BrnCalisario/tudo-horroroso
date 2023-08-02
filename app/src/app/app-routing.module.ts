@@ -4,6 +4,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,11 @@ const routes: Routes = [
     path: 'register',
     title: "Cadastro",
     component: RegisterComponent
+  },
+  {
+    path: 'recipe',
+    title: "Recipe",
+    component: RecipeItemComponent
   },
   {
     path: '**',
