@@ -1,37 +1,70 @@
 .main {
+    padding-top: 40px;
     display: flex;
     justify-content: center;
 }
 
 .main-box {
-    padding: 50px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70vh;
     width: 80vw;
+    border-radius: 15px;
+    background-color: var(--secondary);
+    box-shadow: 0.5px 0.5px 20px gray;
+
 }
 
 .left-section {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
-    width: 100%;
+    /* background-color: aquamarine; */
     height: 100%;
+}
+h2 {
+    font-family: "REM", sans-serif;
+    font-size: 80px;
+    color: var(--primary);
 }
 
 .right-section {
     display: flex;
     flex-direction: column;
-    background-color: yellow;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
 
 .about-text {
-    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: x-large;
+    padding: 20px;
+    color: var(--accent);
 }
 
 .button-section {
+    padding-left: 20px;
+    gap: 30px;
     display: flex;
+}
+
+#logo-img {
+    padding: 100px;
+    width: 600px;
+}
+
+.buttons {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#explore-text {
+    font-family: "REM", sans-serif;
+    font-size: xx-large;
+    color: black;
+    padding-top: 20px;
 }
