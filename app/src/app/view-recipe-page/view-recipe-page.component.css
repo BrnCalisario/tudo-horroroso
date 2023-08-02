@@ -1,0 +1,90 @@
+* {
+    --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+body {
+    height: 100vh;
+
+    margin-top: 7vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nameRecipe {
+    width: 50vw;
+    height: 7vh;
+    margin-bottom: 3vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: var(--shadow);
+    border-radius: 7px;
+    background: white;
+    overflow: hidden;
+}
+
+.nameRecipe h3 {
+    margin: 0;
+}
+
+.container {
+    width: 50vw;
+    height: 30vh;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "login";
+
+    box-shadow: var(--shadow);
+    border-radius: 7px;
+    background: white;
+    overflow: hidden;
+}
+
+.containerDescriptionRecipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    background: white;
+}
+
+.container title{
+    margin: 15px 0;
+}
+
+.containerImg {
+    width: 30vw;
+    height: 30vh;
+
+    top: 0;
+
+    border-radius: 7px;
+    margin-right: 5vw;
+}
+
+.containerImg img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 7px;
+}
+
+.containerIngredients .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 3vh;
+    border-radius: 7px;
+
+    box-shadow: var(--shadow);
+}
+
+

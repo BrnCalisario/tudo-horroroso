@@ -10,6 +10,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
+import { ViewRecipePageComponent } from './view-recipe-page/view-recipe-page.component';
 import { PerfilPageComponent } from './perfil-page/perfil-page.component';
 
 @NgModule({
@@ -18,6 +19,8 @@ import { PerfilPageComponent } from './perfil-page/perfil-page.component';
     NavbarComponent,
     RecipeItemComponent,
     RegisterComponent,
+    LoginPageComponent,
+    ViewRecipePageComponent,
     RecipeListComponent,
     LoginPageComponent,
     CreateRecipeComponent,
