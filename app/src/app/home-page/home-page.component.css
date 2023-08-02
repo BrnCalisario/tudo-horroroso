@@ -14,15 +14,14 @@
     border-radius: 15px;
     background-color: var(--secondary);
     box-shadow: 0.5px 0.5px 20px gray;
-
 }
 
 .left-section {
     display: flex;
     flex-direction: column;
-    /* background-color: aquamarine; */
     height: 100%;
 }
+
 h2 {
     font-family: "REM", sans-serif;
     font-size: 80px;
@@ -57,10 +56,14 @@ h2 {
 }
 
 .buttons {
-    width: 100px;
-    height: 50px;
-    border-radius: 15px;
-    background-color: white;
+    width: 30%;
+    padding: 10px;
+    color: white;
+    background: var(--primary);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 30px;
 }
 
 #explore-text {
@@ -77,8 +80,7 @@ h2 {
         width: 400px;
     }
 
-    h2 
-    {
+    h2 {
         font-size: 3.8rem;
     }
 
