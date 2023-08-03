@@ -1,5 +1,4 @@
-.head
-{
+.head {
     /* outline: 1px solid black; */
     background-color: var(--primary);
 
@@ -8,17 +7,27 @@
     padding: 0.75rem 1.25rem;
 
     border-radius: 25px 25px 0 0;
-    border-bottom: 0;
 }
 
-.item
-{
-    outline: 1px solid gray;
-    height: 2.75rem;
+.item {
+    border: 1px solid lightgray;
+    border-top: 0;
+    padding: 15px;
+    color: gray;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.add-button
+.item p
 {
+    margin: 0;
+    padding: 0;
+}
+
+.add-button {
     font-size: 1.2rem;
 
     display: flex;
@@ -26,9 +35,51 @@
     justify-content: center;
 
     border-radius: 0 0 25px 25px;
+
+    cursor: pointer;
 }
 
-.add-button i
-{
+
+.add-button i {
     font-size: 2rem;
+}
+
+.create
+{
+    display: flex;    
+}
+
+.create input
+{ 
+    width: 80%;
+    border-radius: 0 0 0 15px;
+    padding: 15px;
+    border: 0;
+
+    outline: 1px solid lightgray;
+}
+
+.create button
+{
+    width: 20%;
+    border: 0;
+    background-color: white;
+    border-radius: 0 0 15px;
+    color: var(--primary);
+    font-weight: 800;
+
+    outline: 1px solid var(--primary);
+
+    transition: 0.3s;
+}
+
+.create button:hover
+{
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn
+{
+    font-size: 1.2rem;
 }
