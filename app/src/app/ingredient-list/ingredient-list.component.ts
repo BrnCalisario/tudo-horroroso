@@ -1,10 +1,45 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ingredient-list',
-  templateUrl: './ingredient-list.component.html',
-  styleUrls: ['./ingredient-list.component.css']
+	selector: 'app-ingredient-list',
+	templateUrl: './ingredient-list.component.html',
+	styleUrls: ['./ingredient-list.component.css']
 })
-export class IngredientListComponent {
+class IngredientListComponent {
 
+	ingredients: Ingredient[] = [
+		{ id: - 1, description: "200 g de Presunto"}
+	]
+
+	inputBind : string = ""
+
+	addIngredient(): void {
+		if(this.inputBind.length < 3) return
+		
+		this.ingredients.push(
+			{
+				id: this.ingredients.length,
+				description: this.inputBind
+			})
+
+
+
+		this.inputBind = ""
+		console.log(this.ingredients)
+	}
+
+
+	removeIngredient(index : number)
+	{
+		this.ingredients = this.ingredients.filter(i => i.id != index)
+	}
 }
+
+interface Ingredient
+{
+	id : number;
+	description: string;
+}
+
+
+export { IngredientListComponent }

@@ -1,6 +1,17 @@
+<div class="head">Lista de Ingredientes</div>
 <div class="ingredient-list">
-    <div class="head">Lista de Ingredientes</div>
-    <div class="item add-button">
-        <i class="ri-add-circle-line"></i>
+    <div *ngFor="let ing of ingredients" class="item" >
+        <p>{{ing.description}}</p>
+        <div class="wrap-btn">
+            <button (click)="removeIngredient(ing.id)" class="btn btn-outline-danger">
+                <i class="ri-close-circle-line"></i>
+            </button>
+        </div>
     </div>
+</div>
+
+<div class="create">
+    <input [(ngModel)]="inputBind"
+    placeholder="Quantidade e ingrediente. Exemplo: 2 colheres de chá de açúcar "/>
+    <button (click)="addIngredient()">Adicionar Ingrediente</button>
 </div>
