@@ -43,6 +43,11 @@ const routes: Routes = [
     component: ViewRecipePageComponent
   },
   {
+    path: 'profile',
+    title: "Seu Perfil",
+    component: PerfilPageComponent
+  },
+  {
     path: '**',
     title: "Error",
     component: NotFoundComponent
