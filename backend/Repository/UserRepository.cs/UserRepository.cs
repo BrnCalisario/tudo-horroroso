@@ -1,9 +1,12 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
+namespace TudoHorroroso.Repositories;
+using Model;
+
 public class UserRepository : IUserRepository
 {
-    private TudoHorrorosoContext ctx;
+    private readonly TudoHorrorosoContext ctx;
 
     public UserRepository(TudoHorrorosoContext ctx)
         => this.ctx = ctx;
@@ -32,14 +35,9 @@ public class UserRepository : IUserRepository
         return await query.ToListAsync();
     }
 
-    public async Task<bool> userNameExists(string username)
-        => await ctx.Users.AnyAsync(u => u.Username == username);
-        
-    public async Task<bool> emailExists(string email)
-        => await ctx.Users.AnyAsync(u => u.Email == email);
-
-    public async Task Save()
+    public async Task<bool> IsValid(User user)
     {
-        await ctx.SaveChangesAsync();
+        var query = await ctx.Users.AnyAsync(u => u.UserName == user.UserName || u.Email == user.Email);
+        return !query;
     }
 }

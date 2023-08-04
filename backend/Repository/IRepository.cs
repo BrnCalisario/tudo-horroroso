@@ -1,5 +1,7 @@
 using System.Linq.Expressions;
 
+namespace TudoHorroroso.Repositories;
+
 public interface IRepository<T>
 {
     Task<List<T>> Filter(Expression<Func<T, bool>> exp);

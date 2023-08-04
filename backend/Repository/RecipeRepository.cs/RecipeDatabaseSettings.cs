@@ -1,6 +1,8 @@
-﻿namespace TudoHorroroso.Repository.RecipeRepository.cs
+﻿namespace TudoHorroroso.Repositories;
+
+public class RecipeDatabaseSettings
 {
-    public class RecipeDatabaseSettings
-    {
-    }
+    public string ConnectionString { get; set; } = null!;
+    public string DatabaseName { get; set; } = null!;
+    public string RecipeCollectionName { get; set; } = null!;
 }
