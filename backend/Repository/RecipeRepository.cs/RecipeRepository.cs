@@ -10,35 +10,29 @@ namespace TudoHorroroso.Repository;
 public class RecipeRepository : IRepository<Recipe>
 {
 
-    private readonly IMongoCollection<Recipe> _bookCollection;
+    private readonly IMongoCollection<Recipe> _recipeCollection;
 
-    public RecipeRepository(IOptions<BookStoreDatabaseSettings> settings)
+    public RecipeRepository(IOptions<RecipeDatabaseSettings> settings) // Setar configs no 
     {
         var mongoClient = new MongoClient(settings.Value.ConnectionString);
 
         var mogoDatabase = mongoClient.GetDatabase(settings.Value.DatabaseName);
 
-        _bookCollection = mogoDatabase.GetCollection<Recipe>(settings.Value.BookCollectionName);
+        _recipeCollection = mogoDatabase.GetCollection<Recipe>(settings.Value.RecipeCollectionName);
     }
 
-    public Task Add(Recipe obj)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task Add(Recipe obj)
+       => await _recipeCollection.InsertOneAsync(obj);
+    
+    public async Task Delete(Recipe obj)
+        => await _recipeCollection.DeleteOneAsync(recipe=> recipe.Id == obj.Id);
 
-    public Task Delete(Recipe obj)
+    public async Task Update(Recipe obj)
+        => await _recipeCollection.ReplaceOneAsync(recipe => recipe.Id == obj.Id, obj);
+    
+    public async Task<List<Recipe>> Filter(Expression<Func<Recipe, bool>> exp)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<Recipe>> Filter(Expression<Func<Recipe, bool>> exp)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task Update(Recipe obj)
-    {
-        throw new NotImplementedException();
+        var data = await _recipeCollection.Find(exp).ToListAsync();
+        return data;
     }
 }
-
