@@ -1,8 +1,18 @@
+using TudoHorroroso.Model;
+using TudoHorroroso.Repository;
+using TudoHorroroso.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// builder Services
+builder.Services.AddTransient<IRepository<Recipe>, RecipeRepository>();
+builder.Services.AddTransient<RecipeService>();
+
+
 
 builder.Services.AddCors(options =>
 {
