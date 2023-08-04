@@ -13,12 +13,14 @@
 }
 
 .infos {
-    padding: 40px;
+    padding: 50px;
     border-radius: 15px;
     width: 65%;
     display: flex;
     justify-items: center;
     box-shadow: 0.5px 0.5px 20px gray;
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
 h4, h3, h5 {
