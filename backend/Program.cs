@@ -1,5 +1,6 @@
 using TudoHorroroso.Model;
-using TudoHorroroso.Repository;
+using TudoHorroroso.Repositories;
+using Security.PasswordHasher;
 using TudoHorroroso.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddTransient<TudoHorrorosoContext>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IPasswordHasher, BasicPasswordHasher>();
+
 
 // builder Services
 builder.Services.AddTransient<IRepository<Recipe>, RecipeRepository>();

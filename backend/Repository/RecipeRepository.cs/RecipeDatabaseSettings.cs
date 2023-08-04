@@ -1,4 +1,4 @@
-﻿namespace TudoHorroroso.Repository;
+﻿namespace TudoHorroroso.Repositories;
 
 public class RecipeDatabaseSettings
 {

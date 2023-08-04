@@ -13,8 +13,9 @@ GO
 
 CREATE TABLE [User]
 (
+	Id INT IDENTITY PRIMARY KEY,
     UserName VARCHAR(100),
-    HashCode VARCHAR(MAX),
+    HashCode VARBINARY(MAX),
     Salt VARCHAR(MAX),
     Email VARCHAR(100)
 )

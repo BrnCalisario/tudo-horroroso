@@ -25,14 +25,13 @@ public partial class TudoHorrorosoContext : DbContext
     {
         modelBuilder.Entity<User>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("User");
+            entity.HasKey(e => e.Id).HasName("PK__User__3214EC07E4982D20");
+
+            entity.ToTable("User");
 
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.HashCode).IsUnicode(false);
             entity.Property(e => e.Salt).IsUnicode(false);
             entity.Property(e => e.UserName)
                 .HasMaxLength(100)

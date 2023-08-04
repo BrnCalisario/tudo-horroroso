@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using TudoHorroroso.Model;
 
-namespace TudoHorroroso.Repository;
+namespace TudoHorroroso.Repositories;
 
 public class RecipeRepository : IRepository<Recipe>
 {
