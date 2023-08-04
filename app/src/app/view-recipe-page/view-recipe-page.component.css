@@ -57,11 +57,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: justify;
     position: relative;
 
     background: white;
 
-    padding: 0, 15px, 0, 15px;
+    padding: 0 20px;
 }
 
 .containerDescriptionRecipe h2 {
@@ -118,8 +119,16 @@ body {
 }
 
 .time {
+    display: flex;
+    
     margin-bottom: 3vh;
     margin-top: 3vh;
+}
+
+.time i {
+    font-size: 17px;
+    margin-right: 7px;
+    color: var(--primary);
 }
 
 .ingredients {
