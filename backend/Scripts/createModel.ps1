@@ -9,4 +9,4 @@ dotnet ef dbcontext scaffold $strconn Microsoft.EntityFrameworkCore.SqlServer --
 
 // "Data Source=SNCCHLAB01F17\TEW_SQLEXPRESS;Initial Catalog=TudoHorroroso;Integrated Security=True;TrustServerCertificate=true"
 
-// dotnet ef dbcontext scaffold "Data Source=SNCCHLAB01F17\TEW_SQLEXPRESS;Initial Catalog=TudoHorroroso;Integrated Security=True;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer --force -o Model
+// dotnet ef dbcontext scaffold "Data Source=SNCCH01LAB01F18\SQLEXPRESS;Initial Catalog=TudoHorroroso;Integrated Security=True;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer --force -o Model

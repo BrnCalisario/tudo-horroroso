@@ -32,16 +32,25 @@
 
 .wrap {
     display: flex;
+    transition: 0.2s;
+}
+
+.buttonSearch:hover {
+    background-color: #ff8c5b;
+    transition: 0.2s;
 }
 
 .search {
     width: 30vw;
     height: 5vh;
     padding-left: 25px;
+
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px 0px, rgba(211, 61, 16, 0.32) 0px 2px 16px 0px;
     border: none;
+    outline: none;
+
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px 0px, rgba(211, 61, 16, 0.32) 0px 2px 16px 0px;
 }
 
 .buttonSearch {
@@ -58,16 +67,14 @@
     border-bottom-right-radius: 25px;
 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    transition: 00.3s;
 }
 
 .buttonSearch h1 {
     font-size: 15px;
     margin: 0;
     color: white;
-}
-
-.buttonSearch :hover {
-    background-color: #ff7b42;
 }
 
 .user i {
