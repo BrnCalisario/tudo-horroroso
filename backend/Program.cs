@@ -1,8 +1,19 @@
+using TudoHorroroso.Model;
+using TudoHorroroso.Repositories;
+using Security.PasswordHasher;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddTransient<TudoHorrorosoContext>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IPasswordHasher, BasicPasswordHasher>();
+
 
 builder.Services.AddCors(options =>
 {
