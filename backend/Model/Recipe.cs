@@ -1,9 +1,14 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace TudoHorroroso.Model;
 
 
 public class Recipe
 {
-    public byte[] Id { get; set; }
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
     public string Name { get; set; }
     public string Author { get; set; }
 
