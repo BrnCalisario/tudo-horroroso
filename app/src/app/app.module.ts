@@ -14,6 +14,7 @@ import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { ViewRecipePageComponent } from './view-recipe-page/view-recipe-page.component';
 import { PerfilPageComponent } from './perfil-page/perfil-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PerfilPageComponent } from './perfil-page/perfil-page.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

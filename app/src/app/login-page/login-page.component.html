@@ -4,13 +4,13 @@
             <h3 class="title">LOGIN</h3>
             <div class="text-input">
                 <i class="ri-user-fill"></i>
-                <input type="text"  placeholder="Nome">
+                <input type="text" [(ngModel)]="user.userName" placeholder="Nome">
             </div>
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" placeholder="Senha" />
+                <input type="password" [(ngModel)]="user.password" placeholder="Senha" />
             </div>
-            <button class="login-btn">LOGIN</button>
+            <button class="login-btn" (click)="login()">LOGIN</button>
             <div class="create">
                 <a href="register">Crie sua conta</a>
                 <i class="ri-arrow-right-fill"></i>

@@ -29,6 +29,8 @@ public class UserController : Controller
         [FromServices] IPasswordHasher psh
     )
     {
+        Console.WriteLine("chegou aqui");
+
         if (!await userRepository.IsValid(new() { Email = data.Email, UserName = data.UserName }))
             return BadRequest();
 

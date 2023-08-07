@@ -7,5 +7,5 @@ export class ConfigService {
 
   constructor() { }
 
-  Backend = "http://localhost:5000"
+  backendURL = "http://localhost:5122"
 }
