@@ -7,9 +7,7 @@ import { Component } from '@angular/core';
 })
 class IngredientListComponent {
 
-	ingredients: Ingredient[] = [
-		{ id: - 1, description: "200 g de Presunto"}
-	]
+	ingredients: Ingredient[] = []
 
 	inputBind : string = ""
 
@@ -42,4 +40,4 @@ interface Ingredient
 }
 
 
-export { IngredientListComponent }
+export { IngredientListComponent, Ingredient }

@@ -1,9 +1,11 @@
-.head {
-    background-color: var(--primary);
-
+.head
+{
+    background-color: var(--lightbrown);
     color: white;
+
     font-weight: 600;
-    padding: 0.75rem 1.25rem;
+
+    padding: .75rem 1.25rem;
 
     border-radius: 25px 25px 0 0;
 }
@@ -26,9 +28,6 @@
     padding: 0;
 }
 
-.add-button i {
-    font-size: 2rem;
-}
 
 .create
 {
@@ -51,21 +50,37 @@
     border: 0;
     background-color: white;
     border-radius: 0 0 15px;
-    color: var(--primary);
+    color: var(--lightbrown);
     font-weight: 800;
 
-    outline: 1px solid var(--primary);
-
+    outline: 1px solid var(--lightbrown);
     transition: 0.3s;
 }
 
 .create button:hover
 {
-    background-color: var(--primary);
+    background-color: var(--lightbrown);
     color: white;
 }
 
-.btn
+
+.step-wrap
 {
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.index
+{
+    border: 2px solid var(--lightbrown);
+    color:var(--lightbrown) ;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
