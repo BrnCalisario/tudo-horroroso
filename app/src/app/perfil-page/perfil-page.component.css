@@ -27,6 +27,10 @@ h4, h3, h5 {
     padding: 2px;
 }
 
+h5 {
+    text-align: justify;
+}
+
 .data-user {
     padding: 10px;
 }

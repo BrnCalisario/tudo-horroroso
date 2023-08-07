@@ -63,6 +63,12 @@ body {
     border-radius: 20px;
     cursor: pointer;
     margin-top: 30px;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #ff7e47;
+    transition: 0.2s;
 }
 
 a {

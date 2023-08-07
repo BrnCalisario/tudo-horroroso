@@ -26,7 +26,7 @@ body {
     background: white;
 }
 
-.login h3.title{
+.login h3.title {
     margin: 15px 0;
 }
 
@@ -41,7 +41,7 @@ body {
     margin: 5px 0;
 }
 
-.text-input input{
+.text-input input {
     background: none;
     border: none;
     outline: none;
@@ -57,12 +57,22 @@ body {
 .login-btn {
     width: 60%;
     padding: 10px;
+    margin-top: 30px;
+
     color: white;
     background: var(--primary);
+
     border: none;
     border-radius: 20px;
+
     cursor: pointer;
-    margin-top: 30px;
+
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #ff7e47;
+    transition: 0.2s;
 }
 
 a {
@@ -75,6 +85,12 @@ a {
 
 a.forgot {
     margin-top: 15px;
+
+}
+
+a:hover {
+    color: red;
+    transition: 1s;
 }
 
 .create {
