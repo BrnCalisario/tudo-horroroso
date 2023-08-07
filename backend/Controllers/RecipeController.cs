@@ -16,12 +16,11 @@ public class RecipeController : ControllerBase
     [HttpPost("create")]
     public async Task<ActionResult> Create(
         [FromBody] RecipeDTO recipeDTO,
-        [FromServices] RecipeRepository recipeRepo,
+        [FromServices] IRepository<Recipe> recipeRepo,
         [FromServices] RecipeService recipeService)
     {
         Recipe recipe = new Recipe();
 
-        recipe.Id = recipeService.GenerateHexId();
         recipe.Name = recipeDTO.Name;
         recipe.Author = recipeDTO.Author;
         recipe.Ingredients = recipeDTO.Ingredients;
@@ -31,10 +30,18 @@ public class RecipeController : ControllerBase
         return Ok();
     }
 
+    [HttpGet("getAll")]
+    public async Task<ActionResult> GetAll(
+        [FromServices] RecipeService recipeService)
+    {
+        var query = await recipeService.GetAll();
+        return Ok(query);
+    }
+
     [HttpDelete("delete")]
     public async Task<ActionResult> Delete(
         [FromBody] RecipeDTO recipeDTO,
-        [FromServices] RecipeRepository recipeRepo)
+        [FromServices] IRepository<Recipe> recipeRepo)
     {
         Recipe recipe = new Recipe();
 
@@ -50,7 +57,7 @@ public class RecipeController : ControllerBase
     [HttpPost("update")]
     public async Task<ActionResult> Update(
         [FromBody] RecipeDTO recipeDTO,
-        [FromServices] RecipeRepository recipeRepo)
+        [FromServices] IRepository<Recipe> recipeRepo)
     {
         Recipe recipe = new Recipe();
 

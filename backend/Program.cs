@@ -9,17 +9,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.Configure<RecipeDatabaseSettings>(
+    builder.Configuration.GetSection("RecipeDataBase"));
+
+builder.Services.AddSingleton<RecipeService>();
+
+builder.Services.AddTransient<IRepository<Recipe>, RecipeRepository>();
 
 builder.Services.AddTransient<TudoHorrorosoContext>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IPasswordHasher, BasicPasswordHasher>();
-
-
-// builder Services
-builder.Services.AddTransient<IRepository<Recipe>, RecipeRepository>();
-builder.Services.AddTransient<RecipeService>();
-
-
 
 builder.Services.AddCors(options =>
 {

@@ -22,14 +22,16 @@ public class RecipeRepository : IRepository<Recipe>
     }
 
     public async Task Add(Recipe obj)
-       => await _recipeCollection.InsertOneAsync(obj);
-    
+    {
+        await _recipeCollection.InsertOneAsync(obj);
+    }
+
     public async Task Delete(Recipe obj)
-        => await _recipeCollection.DeleteOneAsync(recipe=> recipe.Id == obj.Id);
+        => await _recipeCollection.DeleteOneAsync(recipe => recipe.Id == obj.Id);
 
     public async Task Update(Recipe obj)
         => await _recipeCollection.ReplaceOneAsync(recipe => recipe.Id == obj.Id, obj);
-    
+
     public async Task<List<Recipe>> Filter(Expression<Func<Recipe, bool>> exp)
     {
         var data = await _recipeCollection.Find(exp).ToListAsync();

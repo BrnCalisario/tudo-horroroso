@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using TudoHorroroso.Model;
 using TudoHorroroso.Repositories;
@@ -18,23 +19,8 @@ namespace TudoHorroroso.Services
             _recipeCollection = mogoDatabase.GetCollection<Recipe>(settings.Value.RecipeCollectionName);
         }
 
-        public byte[] GenerateHexId()
-        {
-            Random rand = new Random();
-            int len;
-            byte[] bytesValue;
-
-            while (true)
-            {
-                len = rand.Next(24);
-                bytesValue = new byte[len];
-                rand.NextBytes(bytesValue);
-
-                bool exists = _recipeCollection.Count(recipe => recipe.Id == bytesValue) == 0 ? false : true;
-
-                if (!exists)
-                    return bytesValue;
-            }
-        }
+        public async Task<ActionResult<List<Recipe>>> GetAll()
+            =>  await this._recipeCollection.Find(_ => true).ToListAsync();
+       
     }
 }
