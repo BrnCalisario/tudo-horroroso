@@ -14,6 +14,7 @@ import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { ViewRecipePageComponent } from './view-recipe-page/view-recipe-page.component';
 import { PerfilPageComponent } from './perfil-page/perfil-page.component';
+import { StepListComponent } from './step-list/step-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PerfilPageComponent } from './perfil-page/perfil-page.component';
     LoginPageComponent,
     CreateRecipeComponent,
     IngredientListComponent,
-    PerfilPageComponent
+    PerfilPageComponent,
+    StepListComponent
   ],
   imports: [
     BrowserModule,

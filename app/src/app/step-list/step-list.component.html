@@ -1,0 +1,23 @@
+<div class="head">
+    Passos
+</div>
+<div class="step-list">
+    <div *ngFor="let stp of steps" class="item" >
+        <div class="step-wrap">
+            <div class="index">
+                {{stp.id + 1}}
+            </div>
+            <p>{{stp.description}}</p>
+        </div>
+        <div class="wrap-btn">
+            <button (click)="removeStep(stp.id)" class="btn btn-outline-danger">
+                <i class="ri-close-circle-line"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="create">
+    <input [(ngModel)]="inputBind"
+    placeholder="Passo. Exemplo: Mexer até a massa ficar homogênea">
+    <button (click)="addStep()">Adicionar Passo</button>
+</div>
