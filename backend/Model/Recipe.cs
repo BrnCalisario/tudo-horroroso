@@ -11,6 +11,8 @@ public class Recipe
     public string Id { get; set; }
     public string Name { get; set; }
     public string Author { get; set; }
+    public byte[] Photo{ get; set; }
+
 
     public ICollection<Ingredient> Ingredients = new List<Ingredient>();
     public ICollection<Step> Steps = new List<Step>();

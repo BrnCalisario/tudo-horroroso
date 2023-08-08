@@ -12,5 +12,4 @@ public class TestController : ControllerBase
     [HttpGet]
     public ActionResult Get()
         => Ok();
-
 }

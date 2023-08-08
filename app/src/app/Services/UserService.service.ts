@@ -17,6 +17,6 @@ export class UserService {
   }
 
   Login(user : Login){
-    return this.http.post(this.config.backendURL + '/user/LoginUser', user)
+    return this.http.post(this.config.backendURL + '/user/login', user)
   }
 }

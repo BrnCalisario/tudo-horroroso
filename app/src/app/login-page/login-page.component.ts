@@ -25,7 +25,7 @@ export class LoginPageComponent {
 
   login() {
     this.userService.Login(this.user).subscribe(x => {
-      this.router.navigate(["/feed"])
+      this.router.navigate(["/profile"])
     })
   }
 }
