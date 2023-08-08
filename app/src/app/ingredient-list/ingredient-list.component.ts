@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { Ingredient } from '../DTO/recipe';
 
 @Component({
 	selector: 'app-ingredient-list',
@@ -7,7 +8,8 @@ import { Component } from '@angular/core';
 })
 class IngredientListComponent {
 
-	ingredients: Ingredient[] = []
+
+	@Input() public ingredients: Ingredient[] = []
 
 	inputBind : string = ""
 
@@ -17,13 +19,10 @@ class IngredientListComponent {
 		this.ingredients.push(
 			{
 				id: this.ingredients.length,
-				description: this.inputBind
+				name: this.inputBind
 			})
 
-
-
-		this.inputBind = ""
-		console.log(this.ingredients)
+		this.inputBind = ""		
 	}
 
 
@@ -33,11 +32,7 @@ class IngredientListComponent {
 	}
 }
 
-interface Ingredient
-{
-	id : number;
-	description: string;
-}
 
 
-export { IngredientListComponent, Ingredient }
+
+export { IngredientListComponent }

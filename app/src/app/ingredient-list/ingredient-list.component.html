@@ -3,7 +3,7 @@
 </div>
 <div class="ingredient-list">
     <div *ngFor="let ing of ingredients" class="item" >
-        <p>{{ing.description}}</p>
+        <p>{{ing.name}}</p>
         <div class="wrap-btn">
             <button (click)="removeIngredient(ing.id)" class="btn btn-outline-danger">
                 <i class="ri-close-circle-line"></i>

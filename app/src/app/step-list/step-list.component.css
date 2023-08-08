@@ -1,5 +1,9 @@
 .head
 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     background-color: var(--lightbrown);
     color: white;
 
@@ -9,6 +13,8 @@
 
     border-radius: 25px 25px 0 0;
 }
+
+
 
 .item {
     border: 1px solid lightgray;
@@ -22,7 +28,7 @@
     align-items: center;
 }
 
-.item p
+p
 {
     margin: 0;
     padding: 0;

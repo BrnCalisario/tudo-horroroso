@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Step } from '../DTO/recipe';
 
 @Component({
   selector: 'app-step-list',
@@ -10,7 +11,7 @@ class StepListComponent {
 
   inputBind : string = "";
 
-  steps : Step[] = []
+  @Input() public steps : Step[] = []
 
   addStep() : void {
     if(this.inputBind.length < 3) return
@@ -29,12 +30,6 @@ class StepListComponent {
 	this.steps = this.steps.filter(s => s.id != index)
  	this.steps.forEach((s, i) => s.id = i)
   }
-}
-
-interface Step
-{
-  id: number;
-  description: string
 }
 
 export { StepListComponent, }

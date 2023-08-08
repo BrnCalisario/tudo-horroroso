@@ -6,7 +6,7 @@ namespace TudoHorroroso.DTO
     {
         public string Name { get; set; }
         public string Author { get; set; }
-        public List<Ingredient> Ingredients = new List<Ingredient>();
-        public List<string> Steps = new List<string>();
+        public ICollection<Ingredient> Ingredients { get; set; }
+        public ICollection<Step> Steps { get; set; }
     }
 }

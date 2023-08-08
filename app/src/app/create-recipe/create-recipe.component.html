@@ -1,16 +1,21 @@
 <div class="create">
     <div>
         <div>
-            <input class="input-style" type="text" placeholder="Nome da Receita" id="title">
+            <input [(ngModel)]="recipe.name" class="input-style" type="text" placeholder="Nome da Receita" id="title">
         </div>
         <div>
-            <textarea class="input-style" placeholder="Descrição"></textarea>
+            <textarea [(ngModel)]="recipe.author" class="input-style" placeholder="Descrição"></textarea>
         </div>
     </div>
 
-    <app-ingredient-list></app-ingredient-list>
+    <app-ingredient-list [ingredients]="recipe.ingredients"></app-ingredient-list>
     <br>
-    <br>
-    <app-step-list></app-step-list>
 
+    <br>
+    <app-step-list [steps]="recipe.steps"></app-step-list>
+    <br>
+    <br>
+    <button class="confirm" (click)="sendRecipe()">
+        Adicionar Receita
+    </button>
 </div>

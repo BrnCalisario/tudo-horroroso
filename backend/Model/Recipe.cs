@@ -12,15 +12,15 @@ public class Recipe
     public string Name { get; set; }
     public string Author { get; set; }
 
-    public List<Ingredient> Ingredients = new List<Ingredient>();
-    public List<string> Steps = new List<string>();
+    public ICollection<Ingredient> Ingredients = new List<Ingredient>();
+    public ICollection<Step> Steps = new List<Step>();
 
     public void AddIngredient(Ingredient ingredient)
         => this.Ingredients.Add(ingredient);
     public void RemoveIngredient(Ingredient ingredient)
         => this.Ingredients.Remove(ingredient);
-    public void AddStep(string step)
+    public void AddStep(Step step)
         => this.Steps.Add(step);
-    public void RemoveStep(string step)
+    public void RemoveStep(Step step)
         => this.Steps.Remove(step);
 }

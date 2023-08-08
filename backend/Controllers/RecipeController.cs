@@ -16,15 +16,21 @@ public class RecipeController : ControllerBase
     [HttpPost("create")]
     public async Task<ActionResult> Create(
         [FromBody] RecipeDTO recipeDTO,
-        [FromServices] IRepository<Recipe> recipeRepo,
-        [FromServices] RecipeService recipeService)
+        [FromServices] IRepository<Recipe> recipeRepo
+        )
     {
-        Recipe recipe = new Recipe();
+        Recipe recipe = new()
+        {
+            Name = recipeDTO.Name,
+            Author = recipeDTO.Author,
+            Ingredients = recipeDTO.Ingredients,
+            Steps = recipeDTO.Steps
+        };
 
-        recipe.Name = recipeDTO.Name;
-        recipe.Author = recipeDTO.Author;
-        recipe.Ingredients = recipeDTO.Ingredients;
-        recipe.Steps = recipeDTO.Steps;
+        foreach(var i in recipeDTO.Ingredients)
+        {
+            Console.WriteLine(i.Name);
+        }
 
         await recipeRepo.Add(recipe);
         return Ok();
@@ -47,8 +53,8 @@ public class RecipeController : ControllerBase
 
         recipe.Name = recipeDTO.Name;
         recipe.Author = recipeDTO.Author;
-        recipe.Ingredients = recipeDTO.Ingredients;
-        recipe.Steps = recipeDTO.Steps;
+        //recipe.Ingredients = recipeDTO.Ingredients;
+        //recipe.Steps = recipeDTO.Steps;
 
         await recipeRepo.Delete(recipe);
         return Ok();
@@ -63,8 +69,8 @@ public class RecipeController : ControllerBase
 
         recipe.Name = recipeDTO.Name;
         recipe.Author = recipeDTO.Author;
-        recipe.Ingredients = recipeDTO.Ingredients;
-        recipe.Steps = recipeDTO.Steps;
+        //recipe.Ingredients = recipeDTO.Ingredients;
+        //recipe.Steps = recipeDTO.Steps;
 
         await recipeRepo.Update(recipe);
         return Ok();

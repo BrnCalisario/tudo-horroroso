@@ -1,17 +1,15 @@
-.create
-{
+.create {
     margin: 0 auto;
     width: 60%;
 }
 
-.create input, textarea
-{
+.create input,
+textarea {
     width: 100%;
     margin: 1rem 0;
 }
 
-.input-style
-{
+.input-style {
     padding: 0.75rem 1.25rem;
     outline: 1px solid lightgray;
     border-radius: 25px;
@@ -22,14 +20,30 @@
     margin: .25rem 0 0.75rem 0;
 }
 
-input[type="text"]:focus
-{
+input[type="text"]:focus {
     outline: 2.5px solid var(--primary);
     transition: 0.2s;
 }
 
-textarea:focus
-{
+textarea:focus {
     outline: 2.5px solid var(--primary);
-    transition: 0.2s;   
+    transition: 0.2s;
+}
+
+.confirm {
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    
+    color: var(--primary);
+    background-color: white;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.confirm:hover {
+    background-color: var(--primary);
+    color: white;
 }
