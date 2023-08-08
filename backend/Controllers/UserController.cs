@@ -16,8 +16,7 @@ public class UserController : Controller
     private readonly IUserRepository userRepository;
 
     public UserController(
-        [FromServices] IUserRepository userRepository
-        )
+        [FromServices] IUserRepository userRepository)
     {
         this.userRepository = userRepository;
     }
@@ -26,8 +25,7 @@ public class UserController : Controller
     [HttpPost("register")]
     public async Task<ActionResult> Register(
         [FromBody] RegisterDTO data,
-        [FromServices] IPasswordHasher psh
-    )
+        [FromServices] IPasswordHasher psh)
     {
         Console.WriteLine("chegou aqui");
 
@@ -48,6 +46,15 @@ public class UserController : Controller
         };
 
         await this.userRepository.Add(u);
+
+        return Ok();
+    }
+
+    [HttpPost("login")]
+    public async Task<ActionResult> Login(
+        [FromBody] RegisterDTO data)
+    {
+        await Console.Out.WriteLineAsync(data.UserName);
 
         return Ok();
     }

@@ -13,11 +13,10 @@ export class UserService {
   constructor(private http: HttpClient, private config: ConfigService) { }
 
   add(user: User) {
-    console.log("chegou aqui");
     return this.http.post(this.config.backendURL + "/user/register", user)
   }
 
   Login(user : Login){
-    return this.http.post(this.config.backendURL + '/user/LoginUser', user)
+    return this.http.post(this.config.backendURL + '/user/login', user)
   }
 }

@@ -14,11 +14,8 @@ import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { ViewRecipePageComponent } from './view-recipe-page/view-recipe-page.component';
 import { PerfilPageComponent } from './perfil-page/perfil-page.component';
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
-=======
 import { StepListComponent } from './step-list/step-list.component';
->>>>>>> 1cecf26e73ea1c73f4c849fd37d6d9f6452e072e
 
 @NgModule({
   declarations: [
