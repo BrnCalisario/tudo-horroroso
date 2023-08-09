@@ -9,6 +9,7 @@ using Repositories;
 using DTO;
 using Security.Jwt;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [EnableCors("MainPolicy")]
@@ -52,8 +53,11 @@ public class UserController : Controller
         return Ok();
     }
 
+
+    
     [HttpPost("login")]
-    public async Task<ActionResult> Login(
+    [AllowAnonymous]
+    public async Task<ActionResult<dynamic>> Login(
         [FromBody] LoginDTO data,
         [FromServices] IUserRepository userRepository,
         [FromServices] IPasswordHasher psh,
@@ -67,13 +71,19 @@ public class UserController : Controller
 
         var validate = psh.Validate(data.Password, user.Salt, user.HashCode);
 
-        if (!validate)
-            return Forbid();
+
+        // TODO Password Service
+        //if (!validate)
+        //    return Forbid();
 
         string jwt = jwtService.GetToken(new UserToken { UserID = user.Id });
-        Jwt result = new() { Value = jwt };
+        dynamic result = new { token = jwt };
 
         return Ok(result);
     }
+
+    [HttpGet("auth")]
+    [Authorize]
+    public string Authenticated() => "Autenticado";
 }
 

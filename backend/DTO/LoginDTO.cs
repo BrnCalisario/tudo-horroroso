@@ -8,10 +8,10 @@ public class LoginDTO
     public string Password { get; set; }
 }
 
-public class Jwt
-{
-    public string Value { get; set; }
-}
+//public class Jwt
+//{
+//    public string Value { get; set; }
+//}
 
 public class UserToken
 {
