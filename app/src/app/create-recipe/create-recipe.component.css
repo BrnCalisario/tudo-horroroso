@@ -1,5 +1,6 @@
 .create {
     margin: 0 auto;
+    margin-bottom: 2rem;
     width: 60%;
 }
 
@@ -46,4 +47,40 @@ textarea:focus {
 .confirm:hover {
     background-color: var(--primary);
     color: white;
+}
+
+.form-floating:hover #more{
+    transition: 0.2s;
+    opacity: 1;
+}
+
+.form-floating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-preview{
+    max-width: 100%;
+    max-height: 50vh;
+
+    border: 2px solid var(--primary);
+    border-radius: 1rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: 0.3s;
+
+    margin-bottom: 1rem;
+}
+
+#more{
+    width: 50px;
+
+    position: absolute;
+    cursor: pointer;
+
+    opacity: 0;
+    transition: 0.3s;
 }

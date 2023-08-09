@@ -8,6 +8,14 @@
         </div>
     </div>
 
+    <div class="form-floating avatar-input" (click)="file.click()">
+        <img src="{{ getImgSrc() }}" class="image-preview" />
+        <input style="display: none" class="form-control" id="floatingFile" type="file" #file
+            (change)="uploadFile(file.files)" />
+        <label for="floatingFile">{{ title }}</label>
+        <img id="more" src="../../assets/sinal-de-mais.png" alt="">
+    </div>
+
     <app-ingredient-list [ingredients]="recipe.ingredients"></app-ingredient-list>
     <br>
 
