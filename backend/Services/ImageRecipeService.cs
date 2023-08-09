@@ -18,16 +18,13 @@ public class ImageRecipeService : IImageService
 
         _recipeCollection = mogoDatabase.GetCollection<Recipe>(settings.Value.RecipeCollectionName);
     }
-    public async Task<ImageDatum> GetImageBytes(IFormFile file)
+    public async Task<byte[]> GetImageBytes(IFormFile file)
     {
         using MemoryStream ms = new MemoryStream();
 
         await file.CopyToAsync(ms);
         var data = ms.GetBuffer();
 
-        var img = new ImageDatum();
-        img.Photo = data;
-
-        return img;
+        return data;
     }
 }

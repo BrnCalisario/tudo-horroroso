@@ -6,7 +6,8 @@ namespace TudoHorroroso.DTO
     {
         public string Name { get; set; }
         public string Author { get; set; }
-        public ImageDatum Photo { get; set; }
+        public byte[] Photo { get; set; }
+
 
         public ICollection<Ingredient> Ingredients { get; set; }
         public ICollection<Step> Steps { get; set; }

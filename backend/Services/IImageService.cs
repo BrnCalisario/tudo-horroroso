@@ -4,5 +4,5 @@ namespace TudoHorroroso.Services;
 
 public interface IImageService
 {
-    Task<ImageDatum> GetImageBytes(IFormFile file);
+    Task<byte[]> GetImageBytes(IFormFile file);
 }
