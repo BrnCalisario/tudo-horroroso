@@ -9,12 +9,12 @@
     <div *ngFor="let stp of steps" class="item" >
         <div class="step-wrap">
             <div class="index">
-                {{stp.id + 1}}
+                {{stp.order + 1}}
             </div>
             <p>{{stp.description}}</p>
         </div>
         <div class="wrap-btn">
-            <button (click)="removeStep(stp.id)" class="btn btn-outline-danger">
+            <button (click)="removeStep(stp.order)" class="btn btn-outline-danger">
                 <i class="ri-close-circle-line"></i>
             </button>
         </div>

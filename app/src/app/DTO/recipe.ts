@@ -4,7 +4,7 @@ interface Ingredient {
 }
 
 interface Step {
-    id: number;
+    order: number;
     description: string
 }
 
