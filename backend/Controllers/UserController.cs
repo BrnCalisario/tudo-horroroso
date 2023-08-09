@@ -7,6 +7,8 @@ namespace TudoHorroroso.Controllers;
 using Model;
 using Repositories;
 using DTO;
+using Security.Jwt;
+using Microsoft.AspNetCore.Identity;
 
 [ApiController]
 [EnableCors("MainPolicy")]
@@ -52,11 +54,26 @@ public class UserController : Controller
 
     [HttpPost("login")]
     public async Task<ActionResult> Login(
-        [FromBody] RegisterDTO data)
+        [FromBody] LoginDTO data,
+        [FromServices] IUserRepository userRepository,
+        [FromServices] IPasswordHasher psh,
+        [FromServices] IJwtService jwtService
+        )
     {
-        await Console.Out.WriteLineAsync(data.UserName);
+        User user = await userRepository.FindByEmail(data.Email);
 
-        return Ok();
+        if (user is null)
+            return NotFound();
+
+        var validate = psh.Validate(data.Password, user.Salt, user.HashCode);
+
+        if (!validate)
+            return Forbid();
+
+        string jwt = jwtService.GetToken(new UserToken { UserID = user.Id });
+        Jwt result = new() { Value = jwt };
+
+        return Ok(result);
     }
 }
 
