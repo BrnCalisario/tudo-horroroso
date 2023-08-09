@@ -1,12 +1,10 @@
-using Microsoft.AspNetCore.Authentication;
+
 using TudoHorroroso.Model;
 using TudoHorroroso.Repositories;
-using Security.PasswordHasher;
 using TudoHorroroso.Services;
 using Security.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
