@@ -2,6 +2,13 @@
     <div class="container">
         <div class="login">
             <h3 class="title">CADASTRO</h3>
+            <div class="form-floating avatar-input" (click)="file.click()">
+                <img src="{{ getImgSrc() }}" class="image-preview" />
+                <input style="display: none" class="form-control" id="floatingFile" type="file" #file
+                    (change)="uploadFile(file.files)" />
+                <label for="floatingFile">{{ title }}</label>
+                <img id="more" src="../../assets/sinal-de-mais.png" alt="">
+            </div>
             <div class="text-input">
                 <i class="ri-user-fill"></i>
                 <input type="text" [(ngModel)]="user.userName" placeholder="Nome">
@@ -12,11 +19,11 @@
             </div>
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" [(ngModel)]="user.password" placeholder="Senha"/>
+                <input type="password" [(ngModel)]="user.password" placeholder="Senha" />
             </div>
             <div class="text-input">
                 <i class="ri-lock-fill"></i>
-                <input type="password" [(ngModel)]="user.password" placeholder="Confirme a senha"/>
+                <input type="password" [(ngModel)]="user.password" placeholder="Confirme a senha" />
             </div>
             <button class="login-btn" (click)="cadastrar()">CADASTRAR</button>
         </div>

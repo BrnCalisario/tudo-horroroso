@@ -16,21 +16,22 @@ public class RecipeController : ControllerBase
     [HttpPost("create")]
     public async Task<ActionResult> Create(
         [FromBody] RecipeDTO recipeDTO,
-        [FromServices] IRepository<Recipe> recipeRepo
-        )
+        [FromServices] IRepository<Recipe> recipeRepo,
+        [FromServices] IImageService imageService
+    )
     {
+
+        var files = Request.Form.Files;
+        var img = await imageService.GetImageBytes(files[0]);
+
         Recipe recipe = new()
         {
             Name = recipeDTO.Name,
             Author = recipeDTO.Author,
             Ingredients = recipeDTO.Ingredients,
-            Steps = recipeDTO.Steps
+            Steps = recipeDTO.Steps,
+            Photo = img
         };
-
-        foreach(var i in recipeDTO.Ingredients)
-        {
-            await Console.Out.WriteLineAsync(i.Name);
-        }
 
         await recipeRepo.Add(recipe);
         return Ok();

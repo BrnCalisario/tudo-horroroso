@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 using TudoHorroroso.Model;
 
 namespace TudoHorroroso.Repositories;
@@ -22,9 +20,7 @@ public class RecipeRepository : IRepository<Recipe>
     }
 
     public async Task Add(Recipe obj)
-    {
-        await _recipeCollection.InsertOneAsync(obj);
-    }
+        => await _recipeCollection.InsertOneAsync(obj);
 
     public async Task Delete(Recipe obj)
         => await _recipeCollection.DeleteOneAsync(recipe => recipe.Id == obj.Id);

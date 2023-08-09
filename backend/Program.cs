@@ -55,6 +55,7 @@ builder.Services.Configure<RecipeDatabaseSettings>(
 builder.Services.AddSingleton<RecipeService>();
 
 builder.Services.AddTransient<IRepository<Recipe>, RecipeRepository>();
+builder.Services.AddTransient<IImageService, ImageRecipeService>();
 
 builder.Services.AddTransient<TudoHorrorosoContext>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
