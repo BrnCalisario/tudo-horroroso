@@ -40,4 +40,22 @@ public class UserRepository : IUserRepository
         var query = await ctx.Users.AnyAsync(u => u.UserName == user.UserName || u.Email == user.Email);
         return !query;
     }
+
+    public async Task<User> Find(int id)
+    {
+        User u = await ctx.Users.FindAsync(id);
+        return u;
+    }
+
+    public async Task<User> FindByName(string name)
+    {
+        User u = await ctx.Users.FirstOrDefaultAsync(u => u.UserName == name);
+        return u;
+    }
+
+    public async Task<User> FindByEmail(string email)
+    {
+        User u = await ctx.Users.FirstOrDefaultAsync(u => u.Email == email);
+        return u;
+    }
 }

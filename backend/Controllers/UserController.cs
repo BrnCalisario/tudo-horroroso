@@ -7,6 +7,9 @@ namespace TudoHorroroso.Controllers;
 using Model;
 using Repositories;
 using DTO;
+using Security.Jwt;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [EnableCors("MainPolicy")]
@@ -50,13 +53,37 @@ public class UserController : Controller
         return Ok();
     }
 
-    [HttpPost("login")]
-    public async Task<ActionResult> Login(
-        [FromBody] RegisterDTO data)
-    {
-        await Console.Out.WriteLineAsync(data.UserName);
 
-        return Ok();
+    
+    [HttpPost("login")]
+    [AllowAnonymous]
+    public async Task<ActionResult<dynamic>> Login(
+        [FromBody] LoginDTO data,
+        [FromServices] IUserRepository userRepository,
+        [FromServices] IPasswordHasher psh,
+        [FromServices] IJwtService jwtService
+        )
+    {
+        User user = await userRepository.FindByEmail(data.Email);
+
+        if (user is null)
+            return NotFound();
+
+        var validate = psh.Validate(data.Password, user.Salt, user.HashCode);
+
+
+        // TODO Password Service
+        //if (!validate)
+        //    return Forbid();
+
+        string jwt = jwtService.GetToken(new UserToken { UserID = user.Id });
+        dynamic result = new { token = jwt };
+
+        return Ok(result);
     }
+
+    [HttpGet("auth")]
+    [Authorize]
+    public string Authenticated() => "Autenticado";
 }
 
