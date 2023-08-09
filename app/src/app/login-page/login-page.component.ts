@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  nome = ""
-  senha = ""
+  userName = ""
+  password = ""
   
   user: Login = {
     userName: '',
@@ -20,7 +20,7 @@ export class LoginPageComponent {
   constructor(private userService : UserService, private router : Router) { }
 
   passwordChanged(event: any) {
-    this.senha = event
+    this.password = event
   }
 
   login() {
