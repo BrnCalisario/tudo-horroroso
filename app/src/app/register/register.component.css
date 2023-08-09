@@ -50,7 +50,7 @@ body {
     height: 150px;
 
     border-radius: 50%;
-    border: 2px solid #ff6550;
+    border: 2px solid var(--primary);
 
     background-repeat: no-repeat;
     background-size: cover;
