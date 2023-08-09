@@ -29,7 +29,7 @@ public class RecipeController : ControllerBase
 
         foreach(var i in recipeDTO.Ingredients)
         {
-            Console.WriteLine(i.Name);
+            await Console.Out.WriteLineAsync(i.Name);
         }
 
         await recipeRepo.Add(recipe);

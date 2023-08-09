@@ -18,7 +18,7 @@ class StepListComponent {
 		
 		this.steps.push(
 			{
-				id: this.steps.length,
+				order: this.steps.length,
 				description: this.inputBind
 			})
 		this.inputBind = ""
@@ -27,8 +27,8 @@ class StepListComponent {
 
   removeStep(index : number) 
   {	
-	this.steps = this.steps.filter(s => s.id != index)
- 	this.steps.forEach((s, i) => s.id = i)
+	this.steps = this.steps.filter(s => s.order != index)
+ 	this.steps.forEach((s, i) => s.order = i)
   }
 }
 
