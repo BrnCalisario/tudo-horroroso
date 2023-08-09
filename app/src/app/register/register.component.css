@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 50vw;
-    height: 60vh;
+    height: 75vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-areas: "login";
@@ -28,6 +28,45 @@ body {
 
 .login h3.title{
     margin: 15px 0;
+}
+
+.avatar-input {
+    padding: 10px;
+}
+
+.form-floating:hover #more{
+    transition: 0.2s;
+    opacity: 1;
+}
+
+.form-floating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-preview{
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+    border: 2px solid #ff6550;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: 0.1s;
+}
+
+#more{
+    width: 50px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#more{
+    opacity: 0;
+    transition: 0.5s;
 }
 
 .text-input {

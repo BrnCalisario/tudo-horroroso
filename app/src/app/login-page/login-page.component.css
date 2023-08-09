@@ -52,6 +52,7 @@ body {
 
 .text-input i {
     color: #686868;
+    transition: 0.3s;
 }
 
 .login-btn {
@@ -71,7 +72,7 @@ body {
 }
 
 .login-btn:hover {
-    background-color: #ff7e47;
+    background-color: #ff5c16;
     transition: 0.2s;
 }
 
@@ -89,8 +90,8 @@ a.forgot {
 }
 
 a:hover {
-    color: red;
-    transition: 1s;
+    color: #747474;
+    transition: 0.3s;
 }
 
 .create {
